@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import numpy as np
 import urllib, json
+import os
 
 import requests
 
@@ -43,22 +44,24 @@ class ExportPotential:
             length = len(data)
             i=1
             for c in data:
-                
+                if os.path.isfile("products/"+c['name']+".json"):
+                    i = i + 1
+                    continue
                 #print(len(data))
                 #FETCH
                 url = "https://exportpotential.intracen.org/api/en/epis/products/from/i/764/to/j/"+c['code']+"/what/k/all"        
                 r = requests.get(url)
-                print(r.json())
+                #print(r.json())
                 
                 #SAVE
                 data = r.json()        
                 with open('products/'+c['name']+'.json', 'w') as outfile:
                     json.dump(data, outfile)
                 
-                txt = "{0}/{1} : ({2}) {3}".format( i, length , c['code'] , c['name'])
+                txt = "Success {0}/{1} : ({2}) {3}".format( i, length , c['code'] , c['name'])
                 print(txt)
                 i = i + 1
-                break;
+                #break;
         
         
     
