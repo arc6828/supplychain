@@ -58,6 +58,7 @@ class ExportPotential:
                     'Accept-Language' :'en-US,en;q=0.9,th;q=0.8'
                 }
                 r = requests.get(url, headers=headers)
+                r = requests.get(url)
                 print(r)
                 print(url)
                 
