@@ -41,6 +41,7 @@ class ExportPotential:
         #READ
         with open('countries.json') as json_file:
             data = json.load(json_file)
+            data.append({"code":"world", "name":"World"})
             length = len(data)
             i=1
             for c in data:
@@ -50,8 +51,15 @@ class ExportPotential:
                 #print(len(data))
                 #FETCH
                 url = "https://exportpotential.intracen.org/api/en/epis/products/from/i/764/to/j/"+c['code']+"/what/k/all"        
-                r = requests.get(url)
-                #print(r.json())
+                if c['code'] == "World":
+                    url = "https://exportpotential.intracen.org/api/en/epis/products/from/i/764/to/w/all/what/k/all"
+                headers = {
+                    'User-Agent': 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.135 Safari/537.36',
+                    'Accept-Language' :'en-US,en;q=0.9,th;q=0.8'
+                }
+                r = requests.get(url, headers=headers)
+                print(r)
+                print(url)
                 
                 #SAVE
                 data = r.json()        
