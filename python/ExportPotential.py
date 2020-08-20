@@ -22,6 +22,20 @@ class ExportPotential:
         data = r.json()        
         with open('countries.json', 'w') as outfile:
             json.dump(data, outfile)
+    
+    @staticmethod
+    def getWorld():
+        print("World")   
+        
+        #FETCH
+        url = "https://exportpotential.intracen.org/api/en/epis/products/from/i/764/to/w/all/what/k/all"        
+        r = requests.get(url)
+        #print(r.json())
+        
+        #SAVE
+        data = r.json()        
+        with open('products/World.json', 'w') as outfile:
+            json.dump(data, outfile)
             
     
     @staticmethod
@@ -41,7 +55,7 @@ class ExportPotential:
         #READ
         with open('countries.json') as json_file:
             data = json.load(json_file)
-            data.append({"code":"world", "name":"World"})
+            data.append({"code":"World", "name":"World"})
             length = len(data)
             i=1
             for c in data:
@@ -78,5 +92,6 @@ class ExportPotential:
         
 
 ExportPotential.saveRankingProductsFromCountries()
+# ExportPotential.getWorld()
 
 
