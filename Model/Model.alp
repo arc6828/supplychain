@@ -170,6 +170,22 @@ for( Tuple tup : plan ) {
 }           ]]></Action>
 				</Event>
 			</Events>
+			<Functions>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[String]]></ReturnType>
+					<Id>1597891575307</Id>
+					<Name><![CDATA[displayCurrentDate]]></Name>
+					<X>1030</X><Y>280</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[String[] a = timeToDate(time()).toString().split(" ");
+return String.format("%S %S %S", a[2],a[1],a[5]);
+]]></Body>
+				</Function>
+			</Functions>
 			<AgentLinks>
 				<AgentLink>
 					<Id>1597415999918</Id>
@@ -594,6 +610,28 @@ for( Tuple tup : plan ) {
 					<VerScaleType>AUTO</VerScaleType>
 					<LabelFormat>dd_MM_HH</LabelFormat>
     			</TimeStackChart>
+				<Text>
+					<Id>1597891407816</Id>
+					<Name><![CDATA[text]]></Name>
+					<X>570</X><Y>270</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[]]></Text>
+					<TextCode><![CDATA[displayCurrentDate()]]></TextCode>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>24</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
 			</Presentation>
 
 				</Level>
@@ -1332,7 +1370,7 @@ for( Tuple tup : plan ) {
 						<Parameter>
 							<Name><![CDATA[rate]]></Name>
 							<Value Class="CodeUnitValue">
-								<Code><![CDATA[(int)ceil(value/1000.0)]]></Code>
+								<Code><![CDATA[value > 0 ? 30 : 0]]></Code>
 								<Unit Class="RateUnits"><![CDATA[PER_MONTH]]></Unit>
 							</Value>
 						</Parameter>
@@ -1559,7 +1597,8 @@ for( Tuple tup : plan ) {
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[main.add_rices(agent.volume);
+								<Code><![CDATA[agent.volume = remain_value > value/30 ? value /30.0 : remain_value;
+main.add_rices(agent.volume);
 remain_value -= agent.volume;
 visible = (remain_value > 0) ;]]></Code>
 							</Value>
@@ -2103,12 +2142,9 @@ visible = (remain_value > 0) ;]]></Code>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-						<Type><![CDATA[int]]></Type>
+						<Type><![CDATA[double]]></Type>
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
-						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[1000]]></Code>
-						</DefaultValue>
 						<ParameterEditor>
 							<Id>0</Id>
 							<EditorContolType>TEXT_BOX</EditorContolType>
@@ -2171,195 +2207,28 @@ visible = (remain_value > 0) ;]]></Code>
 					<LevelVisibility>DIM_NON_CURRENT</LevelVisibility>
 
 			<Presentation>
-				<Group>
-					<Id>1597491846437</Id>
-					<Name><![CDATA[box]]></Name>
+				<Oval>
+					<Id>1597890718909</Id>
+					<Name><![CDATA[oval]]></Name>
 					<X>0</X><Y>0</Y>
-					<Label><X>3.913</X><Y>0</Y></Label>
+					<Label><X>0</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<EmbeddedIcon>false</EmbeddedIcon>
 					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor>-8355840</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<RadiusX>2</RadiusX>
+					<RadiusY>40</RadiusY>
 					<Rotation>0.0</Rotation>
-
-			<Presentation>
-				<Polyline>
-					<Id>1597491846439</Id>
-					<Name><![CDATA[shapeBox]]></Name>
-					<X>0</X><Y>7.826</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<ZHeight>10</ZHeight>
-					<LineWidth>1</LineWidth>
-					<LineColor/>
-					<LineMaterial>null</LineMaterial>
-					<LineStyle>SOLID</LineStyle>
-					<BeginArrowSize>1</BeginArrowSize>
-					<BeginArrowStyle>0</BeginArrowStyle>
-					<EndArrowSize>1</EndArrowSize>
-					<EndArrowStyle>0</EndArrowStyle>
-					<FillColor>-1525489</FillColor>
+					<FillColor>-16776961</FillColor>
 					<FillMaterial>null</FillMaterial>
-					<Points>
-					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-					   <Point><X>7.826</X><Y>-3.913</Y><Z>0</Z></Point>
-					   <Point><X>7.826</X><Y>-11.739</Y><Z>0</Z></Point>
-					   <Point><X>0</X><Y>-15.652</Y><Z>0</Z></Point>
-					   <Point><X>-7.826</X><Y>-11.739</Y><Z>0</Z></Point>
-					   <Point><X>-7.826</X><Y>-3.913</Y><Z>0</Z></Point>
-					</Points>
-					<Closed>true</Closed>
-				</Polyline>
-				<Polyline>
-					<Id>1597491846441</Id>
-					<Name><![CDATA[_ps2]]></Name>
-					<X>0</X><Y>7.826</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<ZHeight>10</ZHeight>
-					<LineWidth>1</LineWidth>
-					<LineColor/>
-					<LineMaterial>null</LineMaterial>
-					<LineStyle>SOLID</LineStyle>
-					<BeginArrowSize>1</BeginArrowSize>
-					<BeginArrowStyle>0</BeginArrowStyle>
-					<EndArrowSize>1</EndArrowSize>
-					<EndArrowStyle>0</EndArrowStyle>
-					<FillColor>402653184</FillColor>
-					<FillMaterial>null</FillMaterial>
-					<Points>
-					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-					   <Point><X>0</X><Y>-7.826</Y><Z>0</Z></Point>
-					   <Point><X>7.826</X><Y>-11.739</Y><Z>0</Z></Point>
-					   <Point><X>7.826</X><Y>-3.913</Y><Z>0</Z></Point>
-					</Points>
-					<Closed>true</Closed>
-				</Polyline>
-				<Polyline>
-					<Id>1597491846443</Id>
-					<Name><![CDATA[_ps3]]></Name>
-					<X>0</X><Y>0</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<ZHeight>10</ZHeight>
-					<LineWidth>1</LineWidth>
-					<LineColor/>
-					<LineMaterial>null</LineMaterial>
-					<LineStyle>SOLID</LineStyle>
-					<BeginArrowSize>1</BeginArrowSize>
-					<BeginArrowStyle>0</BeginArrowStyle>
-					<EndArrowSize>1</EndArrowSize>
-					<EndArrowStyle>0</EndArrowStyle>
-					<FillColor>1358954495</FillColor>
-					<FillMaterial>null</FillMaterial>
-					<Points>
-					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-					   <Point><X>7.826</X><Y>-3.913</Y><Z>0</Z></Point>
-					   <Point><X>0</X><Y>-7.826</Y><Z>0</Z></Point>
-					   <Point><X>-7.826</X><Y>-3.913</Y><Z>0</Z></Point>
-					</Points>
-					<Closed>true</Closed>
-				</Polyline>
-				<Polyline>
-					<Id>1597491846445</Id>
-					<Name><![CDATA[_ps4]]></Name>
-					<X>0</X><Y>7.826</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<ZHeight>10</ZHeight>
-					<LineWidth>1</LineWidth>
-					<LineColor>-11913984</LineColor>
-					<LineMaterial>null</LineMaterial>
-					<LineStyle>SOLID</LineStyle>
-					<BeginArrowSize>1</BeginArrowSize>
-					<BeginArrowStyle>0</BeginArrowStyle>
-					<EndArrowSize>1</EndArrowSize>
-					<EndArrowStyle>0</EndArrowStyle>
-					<FillColor/>
-					<FillMaterial>null</FillMaterial>
-					<Points>
-					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-					   <Point><X>7.826</X><Y>-3.913</Y><Z>0</Z></Point>
-					   <Point><X>7.826</X><Y>-11.739</Y><Z>0</Z></Point>
-					   <Point><X>0</X><Y>-15.652</Y><Z>0</Z></Point>
-					   <Point><X>-7.826</X><Y>-11.739</Y><Z>0</Z></Point>
-					   <Point><X>-7.826</X><Y>-3.913</Y><Z>0</Z></Point>
-					</Points>
-					<Closed>true</Closed>
-				</Polyline>
-				<Line>
-					<Id>1597491846447</Id>
-					<Name><![CDATA[_ps5]]></Name>
-					<X>-3.913</X><Y>-5.87</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<ZHeight>10</ZHeight>
-					<LineWidth>1</LineWidth>
-					<LineColor>-6324726</LineColor>
-					<LineMaterial>null</LineMaterial>
-					<LineStyle>SOLID</LineStyle>
-					<BeginArrowSize>1</BeginArrowSize>
-					<BeginArrowStyle>0</BeginArrowStyle>
-					<EndArrowSize>1</EndArrowSize>
-					<EndArrowStyle>0</EndArrowStyle>
-					<Dx>7</Dx>
-					<Dy>3</Dy>
-					<Dz>0</Dz>
-				</Line>
-				<Line>
-					<Id>1597491846449</Id>
-					<Name><![CDATA[_ps6]]></Name>
-					<X>7.826</X><Y>-3.913</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<ZHeight>10</ZHeight>
-					<LineWidth>1</LineWidth>
-					<LineColor>-6324726</LineColor>
-					<LineMaterial>null</LineMaterial>
-					<LineStyle>SOLID</LineStyle>
-					<BeginArrowSize>1</BeginArrowSize>
-					<BeginArrowStyle>0</BeginArrowStyle>
-					<EndArrowSize>1</EndArrowSize>
-					<EndArrowStyle>0</EndArrowStyle>
-					<Dx>-8</Dx>
-					<Dy>3</Dy>
-					<Dz>0</Dz>
-				</Line>
-			</Presentation>
-
-				</Group>
+				</Oval>
 			</Presentation>
 
 				</Level>
@@ -2534,8 +2403,8 @@ visible = (remain_value > 0) ;]]></Code>
 				<StopOption><![CDATA[Stop at specified date]]></StopOption>
 				<InitialDate><![CDATA[1514764800000]]></InitialDate>	
 				<InitialTime><![CDATA[0.0]]></InitialTime>	
-				<FinalDate><![CDATA[1546214400000]]></FinalDate>	
-				<FinalTime><![CDATA[364.0]]></FinalTime>	
+				<FinalDate><![CDATA[1597881600000]]></FinalDate>	
+				<FinalTime><![CDATA[962.0]]></FinalTime>	
 			</ModelTimeProperties>
 		</SimulationExperiment>	
 	</Experiments>
