@@ -50,7 +50,7 @@ class ExportPotential:
             print(len(data))
             
     @staticmethod
-    def saveRankingProductsFromCountries():
+    def saveRankingProducts():
         print("Countries")   
         #READ
         with open('countries.json') as json_file:
@@ -58,8 +58,9 @@ class ExportPotential:
             data.append({"code":"World", "name":"World"})
             length = len(data)
             i=1
-            for c in data:
-                if os.path.isfile("products/"+c['name']+".json"):
+            for c in data:                
+                filename = "products/"+c['name']+".json"
+                if os.path.isfile(filename):
                     i = i + 1
                     continue
                 #print(len(data))
@@ -78,7 +79,7 @@ class ExportPotential:
                 
                 #SAVE
                 data = r.json()        
-                with open('products/'+c['name']+'.json', 'w') as outfile:
+                with open(filename, 'w') as outfile:
                     json.dump(data, outfile)
                 
                 txt = "Success {0}/{1} : ({2}) {3}".format( i, length , c['code'] , c['name'])
@@ -87,11 +88,42 @@ class ExportPotential:
                 #break;
         
         
-    
+    @staticmethod
+    def saveRankingMarkets():
+        if os.path.isfile('markets.json'):
+            print("Product")   
+        #READ
+        with open('markets.json','r', encoding='utf-8') as json_file:
+            data = json.load(json_file)
+            #data.append({"code":"World", "name":"World"})
+            length = len(data)
+            i=1
+            for c in data:
+                filename = "markets/{0}-{1}-{2}.json".format(c['category'],c['code'],c['name'])
+                if os.path.isfile(filename):
+                    i = i + 1
+                    continue
+                #print(len(data))
+                #FETCH
+                url = "https://exportpotential.intracen.org/api/en/epis/markets/from/i/764/to/j/all/what/k/"+c['code']                       
+                r = requests.get(url)
+                #print(r)
+                #print(url)
+                
+                #SAVE
+                data = r.json()        
+                with open(filename, 'w') as outfile:
+                    json.dump(data, outfile)
+                
+                txt = "Success {0}/{1} : ({2}) {3}".format( i, length , c['code'] , c['name'])
+                print(txt)
+                i = i + 1
+                #break; 
     
         
 
-ExportPotential.saveRankingProductsFromCountries()
+# ExportPotential.saveRankingProducts()
 # ExportPotential.getWorld()
+ExportPotential.saveRankingMarkets()
 
 

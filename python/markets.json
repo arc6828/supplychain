@@ -1,0 +1,107 @@
+[{
+		"code": "100610",
+		"category": "rice",
+		"name": "Rice in the husk",
+		"th": ""
+	}, {
+		"code": "100620",
+		"category": "rice",
+		"name": "Husked or brown rice",
+		"th": ""
+	}, {
+		"code": "100630",
+		"category": "rice",
+		"name": "Semi-milled or wholly milled rice",
+		"th": ""
+	}, {
+		"code": "100640",
+		"category": "rice",
+		"name": "Broken rice",
+		"th": ""
+	}, {
+		"code": "071040",
+		"category": "maize",
+		"name": "Sweetcorn, frozen",
+		"th": ""
+	}, {
+		"code": "200580",
+		"category": "maize",
+		"name": "Sweetcorn",
+		"th": ""
+	}, {
+		"code": "100510",
+		"category": "maize",
+		"name": "Maize seed for sowing",
+		"th": ""
+	}, {
+		"code": "100590",
+		"category": "maize",
+		"name": "Maize (excl seed for sowing)",
+		"th": ""
+	}, {
+		"code": "110220",
+		"category": "maize",
+		"name": "Maize flour",
+		"th": ""
+	}, {
+		"code": "110812",
+		"category": "maize",
+		"name": "Maize starch",
+		"th": ""
+	}, {
+		"code": "110313",
+		"category": "maize",
+		"name": "Groats & meal of maize",
+		"th": ""
+	}, {
+		"code": "110423",
+		"category": "maize",
+		"name": "Worked maize grains, excl rolled, flaked, pellets & flour",
+		"th": ""
+	}, {
+		"code": "151521",
+		"category": "maize",
+		"name": "Crude maize oil",
+		"th": ""
+	}, {
+		"code": "151529",
+		"category": "maize",
+		"name": "Maize oil (excl crude) & fractions",
+		"th": ""
+	}, {
+		"code": "190300",
+		"category": "tapioca",
+		"name": "Tapioca",
+		"th": ""
+	}, {
+		"code": "400110",
+		"category": "rubber",
+		"name": "Natural Rubber latex",
+		"th": ""
+	}, {
+		"code": "400121",
+		"category": "rubber",
+		"name": "Smoked Sheets of natural rubber",
+		"th": ""
+	}, {
+		"code": "400122",
+		"category": "rubber",
+		"name": "Technically Specified natural rubber",
+		"th": ""
+	}, {
+		"code": "400129",
+		"category": "rubber",
+		"name": "Natural rubber in primary form - flat shape (non-smoked)",
+		"th": ""
+	}, {
+		"code": "151110",
+		"category": "palm",
+		"name": "Crude palm oil",
+		"th": ""
+	}, {
+		"code": "151190",
+		"category": "palm",
+		"name": "Palm oil & Fractions",
+		"th": ""
+	}
+]
