@@ -10,7 +10,7 @@
 	<Name><![CDATA[Model]]></Name>
 	<EngineVersion>6</EngineVersion>
 	<JavaPackageName><![CDATA[model]]></JavaPackageName>
-	<ModelTimeUnit><![CDATA[Day]]></ModelTimeUnit>
+	<ModelTimeUnit><![CDATA[Week]]></ModelTimeUnit>
 	<ActiveObjectClasses>
 		<!--   =========   Active Object Class   ========  -->
 		<ActiveObjectClass>
@@ -84,11 +84,11 @@
 					<OccurrenceDate>1597478400000</OccurrenceDate>
 					<OccurrenceTime Class="CodeUnitValue">
 						<Code><![CDATA[0]]></Code>
-						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+						<Unit Class="TimeUnits"><![CDATA[WEEK]]></Unit>
 					</OccurrenceTime>
 					<RecurrenceCode Class="CodeUnitValue">
 						<Code><![CDATA[1]]></Code>
-						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+						<Unit Class="TimeUnits"><![CDATA[WEEK]]></Unit>
 					</RecurrenceCode>
 			</DatasetsCreationProperties>
 			<ScaleRuler>
@@ -109,6 +109,32 @@
 			</ScaleRuler>
 			<CurrentLevel>1597415999922</CurrentLevel>
 			<ConnectionsId>1597415999918</ConnectionsId>
+			<Variables>
+				<Variable Class="Parameter">
+					<Id>1598435722557</Id>
+					<Name><![CDATA[per_lot]]></Name>
+					<X>-250</X><Y>250</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[1000]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1598435722555</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+			</Variables>
 			<Events>
 				<Event>
 					<Id>1597487164797</Id>
@@ -1099,11 +1125,11 @@ return String.format("%S %S %S", a[2],a[1],a[5]);
 					<OccurrenceDate>1597478400000</OccurrenceDate>
 					<OccurrenceTime Class="CodeUnitValue">
 						<Code><![CDATA[0]]></Code>
-						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+						<Unit Class="TimeUnits"><![CDATA[WEEK]]></Unit>
 					</OccurrenceTime>
 					<RecurrenceCode Class="CodeUnitValue">
 						<Code><![CDATA[1]]></Code>
-						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+						<Unit Class="TimeUnits"><![CDATA[WEEK]]></Unit>
 					</RecurrenceCode>
 			</DatasetsCreationProperties>
 			<ScaleRuler>
@@ -1347,11 +1373,11 @@ return String.format("%S %S %S", a[2],a[1],a[5]);
 					<OccurrenceDate>1597478400000</OccurrenceDate>
 					<OccurrenceTime Class="CodeUnitValue">
 						<Code><![CDATA[0]]></Code>
-						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+						<Unit Class="TimeUnits"><![CDATA[WEEK]]></Unit>
 					</OccurrenceTime>
 					<RecurrenceCode Class="CodeUnitValue">
 						<Code><![CDATA[1]]></Code>
-						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+						<Unit Class="TimeUnits"><![CDATA[WEEK]]></Unit>
 					</RecurrenceCode>
 			</DatasetsCreationProperties>
 			<ScaleRuler>
@@ -1414,7 +1440,7 @@ return String.format("%S %S %S", a[2],a[1],a[5]);
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[double]]></Type>        
 						<InitialValue Class="CodeValue">
-							<Code><![CDATA[10000]]></Code>
+							<Code><![CDATA[main.per_lot]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
@@ -2682,11 +2708,11 @@ visible = (remain_value > 0) ;]]></Code>
 					<OccurrenceDate>1597564800000</OccurrenceDate>
 					<OccurrenceTime Class="CodeUnitValue">
 						<Code><![CDATA[0]]></Code>
-						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+						<Unit Class="TimeUnits"><![CDATA[WEEK]]></Unit>
 					</OccurrenceTime>
 					<RecurrenceCode Class="CodeUnitValue">
 						<Code><![CDATA[1]]></Code>
-						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+						<Unit Class="TimeUnits"><![CDATA[WEEK]]></Unit>
 					</RecurrenceCode>
 			</DatasetsCreationProperties>
 			<ScaleRuler>
@@ -2914,11 +2940,11 @@ visible = (remain_value > 0) ;]]></Code>
 					<OccurrenceDate>1598428800000</OccurrenceDate>
 					<OccurrenceTime Class="CodeUnitValue">
 						<Code><![CDATA[0]]></Code>
-						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+						<Unit Class="TimeUnits"><![CDATA[WEEK]]></Unit>
 					</OccurrenceTime>
 					<RecurrenceCode Class="CodeUnitValue">
 						<Code><![CDATA[1]]></Code>
-						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+						<Unit Class="TimeUnits"><![CDATA[WEEK]]></Unit>
 					</RecurrenceCode>
 			</DatasetsCreationProperties>
 			<ScaleRuler>
@@ -3465,11 +3491,11 @@ return current_year == year;]]></Body>
 					<OccurrenceDate>1598428800000</OccurrenceDate>
 					<OccurrenceTime Class="CodeUnitValue">
 						<Code><![CDATA[0]]></Code>
-						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+						<Unit Class="TimeUnits"><![CDATA[WEEK]]></Unit>
 					</OccurrenceTime>
 					<RecurrenceCode Class="CodeUnitValue">
 						<Code><![CDATA[1]]></Code>
-						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+						<Unit Class="TimeUnits"><![CDATA[WEEK]]></Unit>
 					</RecurrenceCode>
 			</DatasetsCreationProperties>
 			<ScaleRuler>
@@ -3653,9 +3679,9 @@ return current_year == year;]]></Body>
 					<Id>1598427227803</Id>
 					<Name><![CDATA[factory]]></Name>
 					<X>0</X><Y>0</Y>
-					<Label><X>1.782</X><Y>0</Y></Label>
+					<Label><X>3.386</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>false</PresentationFlag>
+					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D</DrawMode>
 					<EmbeddedIcon>false</EmbeddedIcon>
@@ -3666,7 +3692,7 @@ return current_year == year;]]></Body>
 				<Polyline>
 					<Id>1598427227805</Id>
 					<Name><![CDATA[_ps287]]></Name>
-					<X>0</X><Y>2.749</Y>
+					<X>0</X><Y>5.224</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3687,26 +3713,26 @@ return current_year == year;]]></Body>
 					<FillMaterial>null</FillMaterial>
 					<Points>
 					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-					   <Point><X>1.07</X><Y>-0.183</Y><Z>0</Z></Point>
-					   <Point><X>0.713</X><Y>-0.367</Y><Z>0</Z></Point>
-					   <Point><X>1.782</X><Y>-0.55</Y><Z>0</Z></Point>
-					   <Point><X>1.426</X><Y>-0.733</Y><Z>0</Z></Point>
-					   <Point><X>2.496</X><Y>-0.916</Y><Z>0</Z></Point>
-					   <Point><X>2.139</X><Y>-1.1</Y><Z>0</Z></Point>
-					   <Point><X>2.496</X><Y>-1.1</Y><Z>0</Z></Point>
-					   <Point><X>2.852</X><Y>-0.916</Y><Z>0</Z></Point>
-					   <Point><X>3.209</X><Y>-1.1</Y><Z>0</Z></Point>
-					   <Point><X>2.852</X><Y>-1.283</Y><Z>0</Z></Point>
-					   <Point><X>2.852</X><Y>-1.466</Y><Z>0</Z></Point>
-					   <Point><X>2.139</X><Y>-1.833</Y><Z>0</Z></Point>
-					   <Point><X>-0.713</X><Y>-0.367</Y><Z>0</Z></Point>
+					   <Point><X>2.033</X><Y>-0.347</Y><Z>0</Z></Point>
+					   <Point><X>1.355</X><Y>-0.697</Y><Z>0</Z></Point>
+					   <Point><X>3.386</X><Y>-1.045</Y><Z>0</Z></Point>
+					   <Point><X>2.709</X><Y>-1.392</Y><Z>0</Z></Point>
+					   <Point><X>4.742</X><Y>-1.74</Y><Z>0</Z></Point>
+					   <Point><X>4.063</X><Y>-2.09</Y><Z>0</Z></Point>
+					   <Point><X>4.742</X><Y>-2.09</Y><Z>0</Z></Point>
+					   <Point><X>5.419</X><Y>-1.74</Y><Z>0</Z></Point>
+					   <Point><X>6.098</X><Y>-2.09</Y><Z>0</Z></Point>
+					   <Point><X>5.419</X><Y>-2.437</Y><Z>0</Z></Point>
+					   <Point><X>5.419</X><Y>-2.785</Y><Z>0</Z></Point>
+					   <Point><X>4.063</X><Y>-3.482</Y><Z>0</Z></Point>
+					   <Point><X>-1.354</X><Y>-0.697</Y><Z>0</Z></Point>
 					</Points>
 					<Closed>true</Closed>
 				</Polyline>
 				<Polyline>
 					<Id>1598427227807</Id>
 					<Name><![CDATA[_ps288]]></Name>
-					<X>-2.852</X><Y>1.283</Y>
+					<X>-5.419</X><Y>2.437</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3727,16 +3753,16 @@ return current_year == year;]]></Body>
 					<FillMaterial>null</FillMaterial>
 					<Points>
 					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-					   <Point><X>0</X><Y>-1.1</Y><Z>0</Z></Point>
-					   <Point><X>2.139</X><Y>0</Y><Z>0</Z></Point>
-					   <Point><X>2.139</X><Y>1.1</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>-2.09</Y><Z>0</Z></Point>
+					   <Point><X>4.063</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>4.063</X><Y>2.09</Y><Z>0</Z></Point>
 					</Points>
 					<Closed>true</Closed>
 				</Polyline>
 				<Polyline>
 					<Id>1598427227809</Id>
 					<Name><![CDATA[_ps289]]></Name>
-					<X>2.139</X><Y>-0.183</Y>
+					<X>4.065</X><Y>-0.347</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3757,15 +3783,15 @@ return current_year == year;]]></Body>
 					<FillMaterial>null</FillMaterial>
 					<Points>
 					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-					   <Point><X>-0.713</X><Y>-0.367</Y><Z>0</Z></Point>
-					   <Point><X>-0.713</X><Y>0.367</Y><Z>0</Z></Point>
+					   <Point><X>-1.354</X><Y>-0.697</Y><Z>0</Z></Point>
+					   <Point><X>-1.354</X><Y>0.698</Y><Z>0</Z></Point>
 					</Points>
 					<Closed>true</Closed>
 				</Polyline>
 				<Curve ControlPoints="true">
 					<Id>1598427227811</Id>
 					<Name><![CDATA[_ps290]]></Name>
-					<X>0.357</X><Y>-0.733</Y>
+					<X>0.679</X><Y>-1.392</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3786,16 +3812,16 @@ return current_year == year;]]></Body>
 					<FillMaterial>null</FillMaterial>
 					<Points>
 					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-					   <Point><X>0</X><Y>0.367</Y><Z>0</Z></Point>
-					   <Point><X>-0.713</X><Y>0.367</Y><Z>0</Z></Point>
-					   <Point><X>-0.713</X><Y>0</Y><Z>0</Z></Point>
-					   <Point><X>-0.713</X><Y>0</Y><Z>0</Z></Point>
-					   <Point><X>-0.713</X><Y>-1.833</Y><Z>0</Z></Point>
-					   <Point><X>-0.713</X><Y>-2.015</Y><Z>0</Z></Point>
-					   <Point><X>-0.713</X><Y>-2.199</Y><Z>0</Z></Point>
-					   <Point><X>0</X><Y>-2.199</Y><Z>0</Z></Point>
-					   <Point><X>0</X><Y>-2.015</Y><Z>0</Z></Point>
-					   <Point><X>0</X><Y>-2.015</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>0.698</Y><Z>0</Z></Point>
+					   <Point><X>-1.354</X><Y>0.698</Y><Z>0</Z></Point>
+					   <Point><X>-1.354</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>-1.354</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>-1.354</X><Y>-3.482</Y><Z>0</Z></Point>
+					   <Point><X>-1.354</X><Y>-3.829</Y><Z>0</Z></Point>
+					   <Point><X>-1.354</X><Y>-4.177</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>-4.177</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>-3.829</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>-3.829</Y><Z>0</Z></Point>
 					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
 					</Points>
 					<Closed>true</Closed>
@@ -3803,7 +3829,7 @@ return current_year == year;]]></Body>
 				<Curve ControlPoints="true">
 					<Id>1598427227813</Id>
 					<Name><![CDATA[_ps291]]></Name>
-					<X>1.426</X><Y>-0.183</Y>
+					<X>2.709</X><Y>-0.347</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3824,16 +3850,16 @@ return current_year == year;]]></Body>
 					<FillMaterial>null</FillMaterial>
 					<Points>
 					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-					   <Point><X>0</X><Y>0.367</Y><Z>0</Z></Point>
-					   <Point><X>-0.713</X><Y>0.367</Y><Z>0</Z></Point>
-					   <Point><X>-0.713</X><Y>0</Y><Z>0</Z></Point>
-					   <Point><X>-0.713</X><Y>0</Y><Z>0</Z></Point>
-					   <Point><X>-0.713</X><Y>-1.833</Y><Z>0</Z></Point>
-					   <Point><X>-0.713</X><Y>-2.015</Y><Z>0</Z></Point>
-					   <Point><X>-0.713</X><Y>-2.199</Y><Z>0</Z></Point>
-					   <Point><X>0</X><Y>-2.199</Y><Z>0</Z></Point>
-					   <Point><X>0</X><Y>-2.015</Y><Z>0</Z></Point>
-					   <Point><X>0</X><Y>-2.015</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>0.698</Y><Z>0</Z></Point>
+					   <Point><X>-1.354</X><Y>0.698</Y><Z>0</Z></Point>
+					   <Point><X>-1.354</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>-1.354</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>-1.354</X><Y>-3.482</Y><Z>0</Z></Point>
+					   <Point><X>-1.354</X><Y>-3.829</Y><Z>0</Z></Point>
+					   <Point><X>-1.354</X><Y>-4.177</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>-4.177</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>-3.829</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>-3.829</Y><Z>0</Z></Point>
 					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
 					</Points>
 					<Closed>true</Closed>
@@ -3841,7 +3867,7 @@ return current_year == year;]]></Body>
 				<Polyline>
 					<Id>1598427227815</Id>
 					<Name><![CDATA[_ps292]]></Name>
-					<X>-0.713</X><Y>1.283</Y>
+					<X>-1.354</X><Y>2.437</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3862,21 +3888,21 @@ return current_year == year;]]></Body>
 					<FillMaterial>null</FillMaterial>
 					<Points>
 					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-					   <Point><X>-2.139</X><Y>-1.1</Y><Z>0</Z></Point>
-					   <Point><X>-1.426</X><Y>-2.199</Y><Z>0</Z></Point>
-					   <Point><X>-1.07</X><Y>-2.015</Y><Z>0</Z></Point>
-					   <Point><X>-0.713</X><Y>-2.566</Y><Z>0</Z></Point>
-					   <Point><X>-0.357</X><Y>-2.382</Y><Z>0</Z></Point>
-					   <Point><X>0</X><Y>-2.932</Y><Z>0</Z></Point>
-					   <Point><X>2.139</X><Y>-1.833</Y><Z>0</Z></Point>
-					   <Point><X>2.139</X><Y>-1.1</Y><Z>0</Z></Point>
+					   <Point><X>-4.063</X><Y>-2.09</Y><Z>0</Z></Point>
+					   <Point><X>-2.709</X><Y>-4.177</Y><Z>0</Z></Point>
+					   <Point><X>-2.033</X><Y>-3.829</Y><Z>0</Z></Point>
+					   <Point><X>-1.354</X><Y>-4.875</Y><Z>0</Z></Point>
+					   <Point><X>-0.678</X><Y>-4.526</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>-5.571</Y><Z>0</Z></Point>
+					   <Point><X>4.063</X><Y>-3.482</Y><Z>0</Z></Point>
+					   <Point><X>4.063</X><Y>-2.09</Y><Z>0</Z></Point>
 					</Points>
 					<Closed>true</Closed>
 				</Polyline>
 				<Polyline>
 					<Id>1598427227817</Id>
 					<Name><![CDATA[_ps293]]></Name>
-					<X>-0.713</X><Y>2.382</Y>
+					<X>-1.354</X><Y>4.526</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3897,22 +3923,22 @@ return current_year == year;]]></Body>
 					<FillMaterial>null</FillMaterial>
 					<Points>
 					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-					   <Point><X>2.852</X><Y>-1.466</Y><Z>0</Z></Point>
-					   <Point><X>2.852</X><Y>-2.566</Y><Z>0</Z></Point>
-					   <Point><X>2.139</X><Y>-2.199</Y><Z>0</Z></Point>
-					   <Point><X>2.139</X><Y>-2.932</Y><Z>0</Z></Point>
-					   <Point><X>1.426</X><Y>-1.833</Y><Z>0</Z></Point>
-					   <Point><X>1.426</X><Y>-2.566</Y><Z>0</Z></Point>
-					   <Point><X>0.713</X><Y>-1.466</Y><Z>0</Z></Point>
-					   <Point><X>0.713</X><Y>-2.199</Y><Z>0</Z></Point>
-					   <Point><X>0</X><Y>-1.1</Y><Z>0</Z></Point>
+					   <Point><X>5.419</X><Y>-2.785</Y><Z>0</Z></Point>
+					   <Point><X>5.419</X><Y>-4.875</Y><Z>0</Z></Point>
+					   <Point><X>4.063</X><Y>-4.177</Y><Z>0</Z></Point>
+					   <Point><X>4.063</X><Y>-5.571</Y><Z>0</Z></Point>
+					   <Point><X>2.709</X><Y>-3.482</Y><Z>0</Z></Point>
+					   <Point><X>2.709</X><Y>-4.875</Y><Z>0</Z></Point>
+					   <Point><X>1.355</X><Y>-2.785</Y><Z>0</Z></Point>
+					   <Point><X>1.355</X><Y>-4.177</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>-2.09</Y><Z>0</Z></Point>
 					</Points>
 					<Closed>true</Closed>
 				</Polyline>
 				<Polyline>
 					<Id>1598427227819</Id>
 					<Name><![CDATA[_ps294]]></Name>
-					<X>0</X><Y>2.015</Y>
+					<X>0</X><Y>3.829</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3933,16 +3959,16 @@ return current_year == year;]]></Body>
 					<FillMaterial>null</FillMaterial>
 					<Points>
 					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-					   <Point><X>0.357</X><Y>-0.183</Y><Z>0</Z></Point>
-					   <Point><X>0.357</X><Y>-0.733</Y><Z>0</Z></Point>
-					   <Point><X>0</X><Y>-0.55</Y><Z>0</Z></Point>
+					   <Point><X>0.679</X><Y>-0.347</Y><Z>0</Z></Point>
+					   <Point><X>0.679</X><Y>-1.392</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>-1.045</Y><Z>0</Z></Point>
 					</Points>
 					<Closed>true</Closed>
 				</Polyline>
 				<Polyline>
 					<Id>1598427227821</Id>
 					<Name><![CDATA[_ps295]]></Name>
-					<X>0.713</X><Y>1.65</Y>
+					<X>1.355</X><Y>3.135</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3963,16 +3989,16 @@ return current_year == year;]]></Body>
 					<FillMaterial>null</FillMaterial>
 					<Points>
 					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-					   <Point><X>0.357</X><Y>-0.183</Y><Z>0</Z></Point>
-					   <Point><X>0.357</X><Y>-0.733</Y><Z>0</Z></Point>
-					   <Point><X>0</X><Y>-0.55</Y><Z>0</Z></Point>
+					   <Point><X>0.679</X><Y>-0.347</Y><Z>0</Z></Point>
+					   <Point><X>0.679</X><Y>-1.392</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>-1.045</Y><Z>0</Z></Point>
 					</Points>
 					<Closed>true</Closed>
 				</Polyline>
 				<Polyline>
 					<Id>1598427227823</Id>
 					<Name><![CDATA[_ps296]]></Name>
-					<X>1.426</X><Y>1.283</Y>
+					<X>2.709</X><Y>2.437</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3993,16 +4019,16 @@ return current_year == year;]]></Body>
 					<FillMaterial>null</FillMaterial>
 					<Points>
 					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-					   <Point><X>0.357</X><Y>-0.183</Y><Z>0</Z></Point>
-					   <Point><X>0.357</X><Y>-0.733</Y><Z>0</Z></Point>
-					   <Point><X>0</X><Y>-0.55</Y><Z>0</Z></Point>
+					   <Point><X>0.679</X><Y>-0.347</Y><Z>0</Z></Point>
+					   <Point><X>0.679</X><Y>-1.392</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>-1.045</Y><Z>0</Z></Point>
 					</Points>
 					<Closed>true</Closed>
 				</Polyline>
 				<Curve ControlPoints="true">
 					<Id>1598427227825</Id>
 					<Name><![CDATA[_ps297]]></Name>
-					<X>2.139</X><Y>-0.183</Y>
+					<X>4.065</X><Y>-0.347</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4024,57 +4050,57 @@ return current_year == year;]]></Body>
 					<Points>
 					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
 					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-					   <Point><X>0</X><Y>1.1</Y><Z>0</Z></Point>
-					   <Point><X>0</X><Y>1.1</Y><Z>0</Z></Point>
-					   <Point><X>0</X><Y>1.1</Y><Z>0</Z></Point>
-					   <Point><X>-2.852</X><Y>2.566</Y><Z>0</Z></Point>
-					   <Point><X>-2.852</X><Y>2.566</Y><Z>0</Z></Point>
-					   <Point><X>-2.852</X><Y>2.566</Y><Z>0</Z></Point>
-					   <Point><X>-4.991</X><Y>1.466</Y><Z>0</Z></Point>
-					   <Point><X>-4.991</X><Y>1.466</Y><Z>0</Z></Point>
-					   <Point><X>-4.991</X><Y>1.466</Y><Z>0</Z></Point>
-					   <Point><X>-4.991</X><Y>0.367</Y><Z>0</Z></Point>
-					   <Point><X>-4.991</X><Y>0.367</Y><Z>0</Z></Point>
-					   <Point><X>-4.991</X><Y>0.367</Y><Z>0</Z></Point>
-					   <Point><X>-4.278</X><Y>-0.733</Y><Z>0</Z></Point>
-					   <Point><X>-4.278</X><Y>-0.733</Y><Z>0</Z></Point>
-					   <Point><X>-4.278</X><Y>-0.733</Y><Z>0</Z></Point>
-					   <Point><X>-3.921</X><Y>-0.55</Y><Z>0</Z></Point>
-					   <Point><X>-3.921</X><Y>-0.55</Y><Z>0</Z></Point>
-					   <Point><X>-3.921</X><Y>-0.55</Y><Z>0</Z></Point>
-					   <Point><X>-3.565</X><Y>-1.1</Y><Z>0</Z></Point>
-					   <Point><X>-3.565</X><Y>-1.1</Y><Z>0</Z></Point>
-					   <Point><X>-3.565</X><Y>-1.1</Y><Z>0</Z></Point>
-					   <Point><X>-3.209</X><Y>-0.916</Y><Z>0</Z></Point>
-					   <Point><X>-3.209</X><Y>-0.916</Y><Z>0</Z></Point>
-					   <Point><X>-3.209</X><Y>-0.916</Y><Z>0</Z></Point>
-					   <Point><X>-2.852</X><Y>-1.466</Y><Z>0</Z></Point>
-					   <Point><X>-2.852</X><Y>-1.466</Y><Z>0</Z></Point>
-					   <Point><X>-2.852</X><Y>-1.466</Y><Z>0</Z></Point>
-					   <Point><X>-2.496</X><Y>-1.283</Y><Z>0</Z></Point>
-					   <Point><X>-2.496</X><Y>-1.283</Y><Z>0</Z></Point>
-					   <Point><X>-2.496</X><Y>-1.283</Y><Z>0</Z></Point>
-					   <Point><X>-2.496</X><Y>-2.382</Y><Z>0</Z></Point>
-					   <Point><X>-2.496</X><Y>-2.566</Y><Z>0</Z></Point>
-					   <Point><X>-2.496</X><Y>-2.749</Y><Z>0</Z></Point>
-					   <Point><X>-1.782</X><Y>-2.749</Y><Z>0</Z></Point>
-					   <Point><X>-1.782</X><Y>-2.566</Y><Z>0</Z></Point>
-					   <Point><X>-1.782</X><Y>-2.382</Y><Z>0</Z></Point>
-					   <Point><X>-1.782</X><Y>-0.916</Y><Z>0</Z></Point>
-					   <Point><X>-1.782</X><Y>-0.916</Y><Z>0</Z></Point>
-					   <Point><X>-1.782</X><Y>-0.916</Y><Z>0</Z></Point>
-					   <Point><X>-1.426</X><Y>-0.733</Y><Z>0</Z></Point>
-					   <Point><X>-1.426</X><Y>-0.733</Y><Z>0</Z></Point>
-					   <Point><X>-1.426</X><Y>-0.733</Y><Z>0</Z></Point>
-					   <Point><X>-1.426</X><Y>-1.833</Y><Z>0</Z></Point>
-					   <Point><X>-1.426</X><Y>-2.015</Y><Z>0</Z></Point>
-					   <Point><X>-1.426</X><Y>-2.199</Y><Z>0</Z></Point>
-					   <Point><X>-0.713</X><Y>-2.199</Y><Z>0</Z></Point>
-					   <Point><X>-0.713</X><Y>-2.015</Y><Z>0</Z></Point>
-					   <Point><X>-0.713</X><Y>-1.833</Y><Z>0</Z></Point>
-					   <Point><X>-0.713</X><Y>-0.367</Y><Z>0</Z></Point>
-					   <Point><X>-0.713</X><Y>-0.367</Y><Z>0</Z></Point>
-					   <Point><X>-0.713</X><Y>-0.367</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>2.09</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>2.09</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>2.09</Y><Z>0</Z></Point>
+					   <Point><X>-5.419</X><Y>4.875</Y><Z>0</Z></Point>
+					   <Point><X>-5.419</X><Y>4.875</Y><Z>0</Z></Point>
+					   <Point><X>-5.419</X><Y>4.875</Y><Z>0</Z></Point>
+					   <Point><X>-9.482</X><Y>2.785</Y><Z>0</Z></Point>
+					   <Point><X>-9.482</X><Y>2.785</Y><Z>0</Z></Point>
+					   <Point><X>-9.482</X><Y>2.785</Y><Z>0</Z></Point>
+					   <Point><X>-9.482</X><Y>0.698</Y><Z>0</Z></Point>
+					   <Point><X>-9.482</X><Y>0.698</Y><Z>0</Z></Point>
+					   <Point><X>-9.482</X><Y>0.698</Y><Z>0</Z></Point>
+					   <Point><X>-8.128</X><Y>-1.392</Y><Z>0</Z></Point>
+					   <Point><X>-8.128</X><Y>-1.392</Y><Z>0</Z></Point>
+					   <Point><X>-8.128</X><Y>-1.392</Y><Z>0</Z></Point>
+					   <Point><X>-7.449</X><Y>-1.045</Y><Z>0</Z></Point>
+					   <Point><X>-7.449</X><Y>-1.045</Y><Z>0</Z></Point>
+					   <Point><X>-7.449</X><Y>-1.045</Y><Z>0</Z></Point>
+					   <Point><X>-6.773</X><Y>-2.09</Y><Z>0</Z></Point>
+					   <Point><X>-6.773</X><Y>-2.09</Y><Z>0</Z></Point>
+					   <Point><X>-6.773</X><Y>-2.09</Y><Z>0</Z></Point>
+					   <Point><X>-6.096</X><Y>-1.74</Y><Z>0</Z></Point>
+					   <Point><X>-6.096</X><Y>-1.74</Y><Z>0</Z></Point>
+					   <Point><X>-6.096</X><Y>-1.74</Y><Z>0</Z></Point>
+					   <Point><X>-5.419</X><Y>-2.785</Y><Z>0</Z></Point>
+					   <Point><X>-5.419</X><Y>-2.785</Y><Z>0</Z></Point>
+					   <Point><X>-5.419</X><Y>-2.785</Y><Z>0</Z></Point>
+					   <Point><X>-4.742</X><Y>-2.437</Y><Z>0</Z></Point>
+					   <Point><X>-4.742</X><Y>-2.437</Y><Z>0</Z></Point>
+					   <Point><X>-4.742</X><Y>-2.437</Y><Z>0</Z></Point>
+					   <Point><X>-4.742</X><Y>-4.526</Y><Z>0</Z></Point>
+					   <Point><X>-4.742</X><Y>-4.875</Y><Z>0</Z></Point>
+					   <Point><X>-4.742</X><Y>-5.222</Y><Z>0</Z></Point>
+					   <Point><X>-3.386</X><Y>-5.222</Y><Z>0</Z></Point>
+					   <Point><X>-3.386</X><Y>-4.875</Y><Z>0</Z></Point>
+					   <Point><X>-3.386</X><Y>-4.526</Y><Z>0</Z></Point>
+					   <Point><X>-3.386</X><Y>-1.74</Y><Z>0</Z></Point>
+					   <Point><X>-3.386</X><Y>-1.74</Y><Z>0</Z></Point>
+					   <Point><X>-3.386</X><Y>-1.74</Y><Z>0</Z></Point>
+					   <Point><X>-2.709</X><Y>-1.392</Y><Z>0</Z></Point>
+					   <Point><X>-2.709</X><Y>-1.392</Y><Z>0</Z></Point>
+					   <Point><X>-2.709</X><Y>-1.392</Y><Z>0</Z></Point>
+					   <Point><X>-2.709</X><Y>-3.482</Y><Z>0</Z></Point>
+					   <Point><X>-2.709</X><Y>-3.829</Y><Z>0</Z></Point>
+					   <Point><X>-2.709</X><Y>-4.177</Y><Z>0</Z></Point>
+					   <Point><X>-1.354</X><Y>-4.177</Y><Z>0</Z></Point>
+					   <Point><X>-1.354</X><Y>-3.829</Y><Z>0</Z></Point>
+					   <Point><X>-1.354</X><Y>-3.482</Y><Z>0</Z></Point>
+					   <Point><X>-1.354</X><Y>-0.697</Y><Z>0</Z></Point>
+					   <Point><X>-1.354</X><Y>-0.697</Y><Z>0</Z></Point>
+					   <Point><X>-1.354</X><Y>-0.697</Y><Z>0</Z></Point>
 					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
 					</Points>
 					<Closed>true</Closed>
@@ -4247,6 +4273,23 @@ return current_year == year;]]></Body>
 			<SelectionModeForSimultaneousEvents>LIFO</SelectionModeForSimultaneousEvents>
 			<VmArgs><![CDATA[]]></VmArgs>
 			<LoadRootFromSnapshot>false</LoadRootFromSnapshot>
+			<Variables>
+				<Variable Class="PlainVariable">
+					<Id>1598435931837</Id>
+					<Name><![CDATA[per_lot]]></Name>
+					<X>-90</X><Y>130</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[10000]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+			</Variables>
 
 			<Presentation>
 				<Text>
@@ -4270,9 +4313,79 @@ return current_year == year;]]></Body>
 					</Font>
 					<Alignment>LEFT</Alignment>
 				</Text>
+				<Control Type="EditBox">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1598435780472</Id>
+					<Name><![CDATA[editbox]]></Name>
+					<X>220</X><Y>120</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<BasicProperties Width="100" Height="30">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<FillColor/>
+						<TextColor/>
+						<Enabled>true</Enabled>
+					</BasicProperties>
+					<ExtendedProperties>
+						<Font Name="Dialog" Size="11" Style="0"/>
+						<LinkTo>true</LinkTo>
+						<Link>per_lot</Link>
+					</ExtendedProperties>
+				</Control>
+				<Text>
+					<Id>1598435793004</Id>
+					<Name><![CDATA[text1]]></Name>
+					<X>70</X><Y>120</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Package Size :  ]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>20</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1598436027471</Id>
+					<Name><![CDATA[text2]]></Name>
+					<X>340</X><Y>120</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[tons at a time]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>20</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
 			</Presentation>
 
 			<Parameters>			
+				<Parameter>
+					<ParameterName><![CDATA[per_lot]]></ParameterName>
+					<ParameterValue Class="CodeValue">
+						<Code><![CDATA[per_lot]]></Code>
+					</ParameterValue>
+				</Parameter>
 			</Parameters>			
 			<PresentationProperties>
 				<EnableZoomAndPanning>true</EnableZoomAndPanning>
@@ -4287,7 +4400,7 @@ return current_year == year;]]></Body>
 				<InitialDate><![CDATA[1483228800000]]></InitialDate>	
 				<InitialTime><![CDATA[0.0]]></InitialTime>	
 				<FinalDate><![CDATA[1597881600000]]></FinalDate>	
-				<FinalTime><![CDATA[1327.0]]></FinalTime>	
+				<FinalTime><![CDATA[189.57142857142858]]></FinalTime>	
 			</ModelTimeProperties>
 		</SimulationExperiment>	
 	</Experiments>
