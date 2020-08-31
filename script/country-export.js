@@ -15,6 +15,18 @@ nightmare
     .type('#Password', 'kakkak1')
     //CLICK LOGIN
     .click('button[name="button"]')
+//TRADEMAP AGAIN
+    //WAIT
+    //TYPE RICE
+    //CLICK TITLE 1006
+    //CLICK MONTHLY TIME SERIES
+//TARTGET PAGE
+    //WAIT
+    //CHOOSE MODE COUNTRY
+    //SELECT DROP DOWN COUNTRIES
+    //CHOOSE IMPORT
+
+
 
     // //TYPE SPECIFIED INPUT
     // .type('#search_form_input_homepage', 'github nightmare')
