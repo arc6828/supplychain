@@ -17,14 +17,25 @@ nightmare
     .click('button[name="button"]')
 //TRADEMAP AGAIN
     //WAIT
+    .wait('#ctl00_PageContent_RadComboBox_Product_Input')
     //TYPE RICE
+    .type('#ctl00_PageContent_RadComboBox_Product_Input', ' rice')
     //CLICK TITLE 1006
+    .wait('div[title="1006 - Rice"]')
+    .click('div[title="1006 - Rice"]')
     //CLICK MONTHLY TIME SERIES
+    .click('#ctl00_PageContent_Button_TimeSeries_M')
 //TARTGET PAGE
     //WAIT
+    .wait('#ctl00_PageContent_MyGridView1')
+    //CHOOSE IMPORT
+    .click('#ctl00_PageContent_GridViewPanelControl_ImageButton_ExportExcel')
+    //.type('#ctl00_PageContent_RadComboBox_Product_Input', ' rice')
+    .type('body', '\u000d')
+
+    
     //CHOOSE MODE COUNTRY
     //SELECT DROP DOWN COUNTRIES
-    //CHOOSE IMPORT
 
 
 
@@ -41,7 +52,7 @@ nightmare
     //     return JSON.stringify(urls);
 
     // })
-    .end()
+    //.end()
     // .then((text) => {
     //     text = JSON.parse(text);
     //     text.forEach((t)=>console.log(t))
