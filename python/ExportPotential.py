@@ -125,34 +125,41 @@ class ExportPotential:
         if os.path.isfile('products.json'):
             print("Product")   
         #READ
-        with open('products.json','r', encoding='utf-8') as json_file:
-            data = json.load(json_file)
+        with open('countries.json','r', encoding='utf-8') as json_file:
+            countries = json.load(json_file)
             #data.append({"code":"World", "name":"World"})
-            length = len(data)
-            i=1
-            for c in data:
-                filename = "exporters/{0}-{1}-{2}.json".format(c['category'],c['code'],c['name'])
-                if os.path.isfile(filename):
-                    i = i + 1
-                    continue
-                #print(len(data))
-                #FETCH
-                #url = "https://exportpotential.intracen.org/api/en/epis/markets/from/i/764/to/j/all/what/k/"+c['code']                       
-                url = "https://exportpotential.intracen.org/api/en/epis/exporters/from/r/all/to/w/all/what/k/"+c['code'] 
-                r = requests.get(url)
-                #print(r)
-                #print(url)
-                
-                #SAVE
-                data = r.json()        
-                with open(filename, 'w') as outfile:
-                    json.dump(data, outfile)
-                
-                txt = "Success {0}/{1} : ({2}) {3}".format( i, length , c['code'] , c['name'])
-                print(txt)
-                i = i + 1
-                #break; 
-       
+            #length = len(data)
+            with open('products.json','r', encoding='utf-8') as json_file:
+                data = json.load(json_file)
+                #data.append({"code":"World", "name":"World"})
+                length = len(data)
+                i=1
+                for country in countries :
+                    for c in data:
+                        filename = "exporters/"+country['name']+"/{0}-{1}-{2}.json".format(c['category'],c['code'],c['name'])
+                        if not os.path.exists("exporters/"+country['name']):
+                            os.makedirs("exporters/"+country['name'])
+                        if os.path.isfile(filename):
+                            i = i + 1
+                            continue
+                        #print(len(data))
+                        #FETCH
+                        #url = "https://exportpotential.intracen.org/api/en/epis/markets/from/i/764/to/j/all/what/k/"+c['code']                       
+                        url = "https://exportpotential.intracen.org/api/en/epis/exporters/from/r/all/to/j/"+country['code']+"/what/k/"+c['code'] 
+                        r = requests.get(url)
+                        #print(r)
+                        #print(url)
+                        
+                        #SAVE
+                        data = r.json()        
+                        with open(filename, 'w') as outfile:
+                            json.dump(data, outfile)
+                        
+                        txt = "Success {4} {0}/{1} : ({2}) {3}".format( i, length , c['code'] , c['name'],country['name'])
+                        print(txt)
+                        i = i + 1
+                        #break; 
+           
     
         
 
