@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import numpy as np
+import pandas as pd
 import urllib, json
 import os
 
@@ -8,6 +9,20 @@ import requests
 class ExportPotential:
     def __init__(self):
         print("Hello")
+        
+    @staticmethod
+    def getProducts():
+        print("Products")   
+        
+        #FETCH
+        url = "https://exportpotential.intracen.org/api/en/products"        
+        r = requests.get(url)
+        #print(r.json())
+        
+        #SAVE
+        data = r.json()        
+        with open('standard-products.json', 'w') as outfile:
+            json.dump(data, outfile)
 
     @staticmethod
     def getCountries():
@@ -32,9 +47,18 @@ class ExportPotential:
         r = requests.get(url)
         #print(r.json())
         
+        
+        data = r.json()   
+        
+        #READ
+        with open('all_products.json') as json_file:
+            products = json.load(json_file)
+            keys = list(map(lambda item : str(item['code']) , products))
+            print(keys)
+            data = list(filter(lambda item : (item['ItemCode'] in keys) , data)) 
+            
         #SAVE
-        data = r.json()        
-        with open('products/World.json', 'w') as outfile:
+        with open('products/World-5P.json', 'w') as outfile:
             json.dump(data, outfile)
             
     
@@ -159,13 +183,46 @@ class ExportPotential:
                         print(txt)
                         i = i + 1
                         #break; 
+                        
+    @staticmethod
+    def convertJsonToExcel(source, target):
+        #https://www.marsja.se/how-to-convert-json-to-excel-python-pandas/
+        print(555)
+        #READ
+        with open(source) as json_file:
+            data = json.load(json_file)
+            # for c in data:
+            #     print('Id: ' + c['code'])
+            #     print('Country: ' + c['name'])
+            # print(len(data))
+            
+            df = pd.DataFrame(data)
+            df.to_excel(target)
+            
+    @staticmethod
+    def convertExcelToJson(source,sheet,target):
+        #https://www.journaldev.com/33335/python-excel-to-json-conversion
+        excel_data_df = pd.read_excel(source, sheet_name=sheet)
+        json_str = excel_data_df.to_json(orient='records')
+                
+        #SAVE        
+        data = json.loads(json_str)     
+        with open(target, 'w') as outfile:
+            json.dump(data, outfile)
+        
+        
+                
            
     
         
 
 # ExportPotential.saveRankingProducts()
-# ExportPotential.getWorld()
+ExportPotential.getWorld()
 # ExportPotential.saveRankingMarkets()
-ExportPotential.saveRankingExporters()
+# ExportPotential.saveRankingExporters()
 
+# ExportPotential.getProducts()
+            
+# ExportPotential.convertJsonToExcel("standard-products.json", "hscode_ept.xlsx")
+# ExportPotential.convertExcelToJson("hscode_ept.xlsx", "Sheet2", "all_products.json")
 
