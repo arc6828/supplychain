@@ -4241,10 +4241,10 @@ return current_year == year;]]></Body>
 		<MaximumMemory>512</MaximumMemory>
 		<ModelTimeProperties>
 			<StopOption><![CDATA[Stop at specified date]]></StopOption>
-			<InitialDate><![CDATA[1514764800000]]></InitialDate>	
+			<InitialDate><![CDATA[1483228800000]]></InitialDate>	
 			<InitialTime><![CDATA[0.0]]></InitialTime>	
 			<FinalDate><![CDATA[1597881600000]]></FinalDate>	
-			<FinalTime><![CDATA[962.0]]></FinalTime>	
+			<FinalTime><![CDATA[189.57142857142858]]></FinalTime>	
 		</ModelTimeProperties>
 		<AnimationProperties>
 			<StopNever>true</StopNever>
