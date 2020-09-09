@@ -161,7 +161,8 @@ class ExportPotential:
         #READ
         with open('countries.json','r', encoding='utf-8') as json_file:
             countries = json.load(json_file)
-            #data.append({"code":"World", "name":"World"})
+            countries.append({"code":"World", "name":"World"})
+            #countries = [{"code":"all", "name":"World"}]
             #length = len(data)
             with open('products.json','r', encoding='utf-8') as json_file:
                 data = json.load(json_file)
@@ -178,8 +179,9 @@ class ExportPotential:
                             continue
                         #print(len(data))
                         #FETCH
-                        #url = "https://exportpotential.intracen.org/api/en/epis/markets/from/i/764/to/j/all/what/k/"+c['code']                       
-                        url = "https://exportpotential.intracen.org/api/en/epis/exporters/from/r/all/to/j/"+country['code']+"/what/k/"+c['code'] 
+                        #url = "https://exportpotential.intracen.org/api/en/epis/markets/from/i/764/to/j/all/what/k/"+c['code']                
+                        #url = "https://exportpotential.intracen.org/api/en/epis/exporters/from/i/all/to/j/all/what/k/100620"
+                        url = "https://exportpotential.intracen.org/api/en/epis/exporters/from/i/all/to/j/"+country['code']+"/what/k/"+c['code'] 
                         r = requests.get(url)
                         #print(r)
                         #print(url)
@@ -193,6 +195,7 @@ class ExportPotential:
                         print(txt)
                         i = i + 1
                         #break; 
+                #return 0
                         
     @staticmethod
     def convertJsonToExcel(source, target):
@@ -226,10 +229,10 @@ class ExportPotential:
     
         
 
-ExportPotential.saveRankingProducts()
+#ExportPotential.saveRankingProducts()
 # ExportPotential.getWorld()
 # ExportPotential.saveRankingMarkets()
-# ExportPotential.saveRankingExporters()
+ExportPotential.saveRankingExporters()
 
 # ExportPotential.getProducts()
             
