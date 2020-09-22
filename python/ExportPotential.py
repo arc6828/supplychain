@@ -161,17 +161,16 @@ class ExportPotential:
         #READ
         with open('countries.json','r', encoding='utf-8') as json_file:
             countries = json.load(json_file)
-            countries.append({"code":"World", "name":"World"})
+            countries.append({"code":"all", "name":"World"})
             #countries = [{"code":"all", "name":"World"}]
             #length = len(data)
             with open('products.json','r', encoding='utf-8') as json_file:
-                data = json.load(json_file)
-                #data.append({"code":"World", "name":"World"})
-                length = len(data)
-                i=1
+                products = json.load(json_file)
+                length = len(products)
                 for country in countries :
-                    for c in data:
-                        filename = "exporters/"+country['name']+"/{0}-{1}-{2}.json".format(c['category'],c['code'],c['name'])
+                    i=1
+                    for c in products:                        
+                        filename = "exporters/{3}/{0}-{1}-{2}.json".format(c['category'],c['code'],c['name'],country['name'])
                         if not os.path.exists("exporters/"+country['name']):
                             os.makedirs("exporters/"+country['name'])
                         if os.path.isfile(filename):
@@ -181,7 +180,7 @@ class ExportPotential:
                         #FETCH
                         #url = "https://exportpotential.intracen.org/api/en/epis/markets/from/i/764/to/j/all/what/k/"+c['code']                
                         #url = "https://exportpotential.intracen.org/api/en/epis/exporters/from/i/all/to/j/all/what/k/100620"
-                        url = "https://exportpotential.intracen.org/api/en/epis/exporters/from/i/all/to/j/"+country['code']+"/what/k/"+c['code'] 
+                        url = "https://exportpotential.intracen.org/api/en/epis/exporters/from/i/all/to/j/"+str(country['code'])+"/what/k/"+str(c['code']) 
                         r = requests.get(url)
                         #print(r)
                         #print(url)
@@ -194,8 +193,8 @@ class ExportPotential:
                         txt = "Success {4} {0}/{1} : ({2}) {3}".format( i, length , c['code'] , c['name'],country['name'])
                         print(txt)
                         i = i + 1
-                        #break; 
-                #return 0
+                        
+                        
                         
     @staticmethod
     def convertJsonToExcel(source, target):
